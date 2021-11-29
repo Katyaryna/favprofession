@@ -1,0 +1,312 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+html{scroll-behavior: smooth;}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    /*font-family: 'Amatic SC', cursive;*/
+}
+
+
+.container{
+    max-width: 1150px;
+    margin: 0 auto;
+}
+.intro{
+    display:flex;
+    flex-direction: column;
+    
+    
+}
+
+.nav{
+    display:flex;
+    justify-content: space-around;
+    padding-top:3%;
+    padding-bottom:3%;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:5;
+    margin:0 auto;
+
+    background-color: white;
+    
+}
+.nav_link{
+    font-size:20px;
+    color:black;
+}
+.nav_link:hover{
+    color:#DC143C;
+}
+.nav_link:visited{
+    color:#DC143C;
+    text-decoration: underline;
+}
+
+.pre_intro{
+    margin-top:13%;
+    
+    display:flex;
+    align-items: flex-end;
+    justify-content:space-between;
+}
+.pre_intro:before{
+    content:"";
+    display:block;
+    background-color: black;
+    position:absolute;
+    width:1150px;
+    height:2px;
+    top:17%;
+    z-index:1;
+}
+.pre_intro_name{
+    text-align:left;
+
+    font-weight: 900;
+    font-size: 50px;
+}
+.pre_intro_text{
+    font-size:20px;
+    color:black;
+    text-align:left;
+}
+.pre_intro_vertical{
+    font-size: 20px;
+    color: #000000;
+    margin-bottom:3%;
+
+    transform: rotate(-90deg);
+}
+
+.intro_img{
+    margin-top:3%;
+    overflow: hidden;
+}
+.intro_img img{
+width: 1150px;
+height: 600px;
+object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*sec1*/
+
+
+
+
+
+
+
+
+
+
+.sec_1{
+    background-color:black;
+    color:white;
+}
+
+.sec1_col{
+    display:flex;
+    flex-direction: column;
+
+    padding:10%;
+}
+
+.header_sec1{
+    font-size:36px;
+    font-weight:900;
+    text-align:center;
+}
+
+.sec1_text{
+    font-size:20px;
+    color:white;
+    text-align:left;
+    padding-right:10%;
+}
+.sec1_text2{
+    font-size:20px;
+    color:white;
+    margin-top:4%;
+    text-align:center;
+}
+.dev_row1{
+    margin-top:5%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+   }
+
+
+
+
+
+/* Slider */
+.slider{
+    width:100%;
+     position:absolute;
+     bottom:0;
+     left:0;
+     z-index:1;
+ }
+ .slider_inner{
+     display:flex;
+     justify-content: space-between;
+ }
+ .slider_item{
+     width: 50%;
+     font-size: 18px;
+     font-weight: 500;
+     color:#fff;
+     text-transform: uppercase;
+     padding:20px 0;
+     border-top:3px solid #fff;
+     opacity:0.7;
+     position: relative;
+ 
+ }
+ .slider_item.active{
+     opacity:1;
+ }
+ .slider_item.active::before{
+     content:"";
+     display:block;
+     background-color: brown;
+     position:absolute;
+     width:70px;
+     height:3px;
+     top:-3px;
+     left:0;
+     z-index:1;
+ }
+ 
+ .slider_num{
+     font-size: 24px;
+     font-weight: 700;
+ }
+ 
+
+ 
+ 
+ 
+ 
+ /* Собственно сам слайдер */
+ .slider{
+     max-width: 100%;
+     position: relative;
+     margin: auto;
+     height: 300px;
+     margin-bottom: 15px;
+ }
+ /* Картинка мастабируется по отношению к родительскому элементу */
+ .slider .item img {
+     object-fit: cover;
+     width: 700px;
+     height: 300px;
+     border: none !important;
+     box-shadow: none !important;
+ }
+ /* Кнопки вперед и назад */
+ .slider .prev, .slider .next {
+     cursor: pointer;
+     position: absolute;
+     top: 0;
+     top: 50%;
+     width: auto;
+     margin-top: -22px;
+     padding: 16px;
+     color: white;
+     font-weight: bold;
+     font-size: 18px;
+     transition: 0.6s ease;
+     border-radius: 0 3px 3px 0;
+ }
+ .slider .next {
+     right: 0;
+     border-radius: 3px 0 0 3px;
+ }
+ /* При наведении на кнопки добавляем фон кнопок */
+ .slider .prev:hover,
+ .slider .next:hover {
+     background-color: rgba(0, 0, 0, 0.8);
+ }
+ /* Заголовок слайда */
+ .slideText {
+     position: absolute;
+     color: #fff;
+     font-size: 35px;
+     /* Выравнивание текста по горизонтали и по вертикали*/
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+     /* Тень*/
+     text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+ }
+ /* Кружочки */
+ .slider-dots {
+     text-align: center;
+ }
+ .slider-dots_item{
+     cursor: pointer;
+     height: 12px;
+     width: 12px;
+     margin: 0 2px;
+     background-color: #ddd;
+     border-radius: 50%;
+     display: inline-block;
+     transition: background-color 0.6s ease;
+ }
+ .active,
+ .slider-dots_item:hover {
+     background-color: #aaa;
+ }
+ /* Анимация слайдов */
+ .slider .item {
+     -webkit-animation-name: fade;
+     -webkit-animation-duration: 1.5s;
+ 
+     animation-name: fade;
+     animation-duration: 1.5s;
+ }
+ @-webkit-keyframes fade {
+     from {
+         opacity: .4
+     }
+     to {
+         opacity: 1
+     }
+ }
+ @keyframes fade {
+     from {
+         opacity: .4
+     }
+     to {
+         opacity: 1
+     }
+ }
+
+
